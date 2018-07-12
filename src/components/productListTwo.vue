@@ -6,6 +6,9 @@
         {{p.name}} - ${{p.price}}
       </li>
     </ul>
+
+    <button v-on:click="reducePrice">Reduce Price</button>
+
   </div>
 </template>
 
@@ -17,6 +20,12 @@
       },
       saleProducts(){
         return this.$store.getters.saleProducts;
+      },
+
+    },
+    methods: {
+      reducePrice: function () {
+        this.$store.dispatch('reducePrice');
       }
     }
   }
