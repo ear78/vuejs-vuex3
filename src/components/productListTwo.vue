@@ -1,13 +1,13 @@
 <template>
   <div id="product-list-two">
-    <h2>This is product list 2</h2>
+    <h2>This is Product List</h2>
     <ul>
-      <li v-for="p in saleProducts">
+      <li v-for="p in products">
         {{p.name}} - ${{p.price}}
       </li>
     </ul>
 
-    <button v-on:click="reducePrice">Reduce Price</button>
+    <button v-on:click="reducePrice">Reduce Price -</button>
 
   </div>
 </template>

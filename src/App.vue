@@ -24,6 +24,9 @@ export default {
 </script>
 
 <style lang="scss">
+
+$transition: all .2s ease;
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -49,5 +52,18 @@ li {
 
 a {
   color: #42b983;
+}
+
+button {
+  background: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,.2);
+  padding: 10px 15px;
+  border: 1px solid #2c3e50;
+  transition: $transition;
+  &:hover {
+    cursor: pointer;
+    background: #2c3e50;
+    color: #fff;
+  }
 }
 </style>
