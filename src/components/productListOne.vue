@@ -4,7 +4,7 @@
     <ul>
       <li v-for="product in saleProducts">{{product.name}} - ${{product.price}}</li>
     </ul>
-    <button v-on:click="addPrice">Add Price</button>
+    <button v-on:click="addPrice(4)">Add Price</button>
   </div>
 </template>
 
@@ -19,8 +19,8 @@
       }
     },
     methods: {
-      addPrice: function(){
-        this.$store.dispatch('addPrice');
+      addPrice: function(amount){
+        this.$store.dispatch('addPrice', amount);
       }
     }
   }

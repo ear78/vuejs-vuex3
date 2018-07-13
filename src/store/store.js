@@ -30,9 +30,9 @@ export const store = new Vuex.Store({
         product.price -= 1;
       })
     },
-    addPrice: function(state){
+    addPrice: function(state, payload){
       state.products.forEach(function(product){
-        product.price += 1;
+        product.price += payload;
       })
     }
   },
@@ -40,12 +40,12 @@ export const store = new Vuex.Store({
     reducePrice: function(context){
       setTimeout(function(){
         context.commit('reducePrice');
-      }, 500);
+      }, 200);
     },
-    addPrice: function(context){
+    addPrice: function(context, payload){
       setTimeout(function(){
-        context.commit('addPrice');
-      }, 1000);
+        context.commit('addPrice', payload);
+      }, 200);
     }
   }
 })
