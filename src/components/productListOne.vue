@@ -4,24 +4,31 @@
     <ul>
       <li v-for="product in saleProducts">{{product.name}} - ${{product.price}}</li>
     </ul>
-    <button v-on:click="addPrice(4)">Add Price</button>
+    <button v-on:click="addPrice(5)">Add Price</button>
   </div>
 </template>
 
 <script>
+  import {mapActions} from 'vuex';
+  import {mapGetters} from 'vuex';
+
   export default {
     computed: {
       products(){
         return this.$store.state.products;
       },
-      saleProducts(){
-        return this.$store.getters.saleProducts;
-      }
+      ...mapGetters([
+        'saleProducts'
+      ])
     },
     methods: {
-      addPrice: function(amount){
-        this.$store.dispatch('addPrice', amount);
-      }
+      ...mapActions([
+        'addPrice'
+      ])
+
+      // addPrice: function(amount){
+      //   this.$store.dispatch('addPrice', amount);
+      // }
     }
   }
 </script>
